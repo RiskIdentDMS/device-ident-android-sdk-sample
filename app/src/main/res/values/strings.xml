@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">DeviceIdent Sample</string>
+    <string name="request_permissions">Request Permissions</string>
+</resources>
