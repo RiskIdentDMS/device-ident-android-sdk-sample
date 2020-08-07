@@ -1,4 +1,4 @@
-package com.riskident.deviceidentsample;
+package de.deviceident.deviceidentsample;
 
 import android.app.Application;
 import com.riskident.device.ClientSecurityModule;

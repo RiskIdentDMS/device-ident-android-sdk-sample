@@ -1,4 +1,4 @@
-package com.riskident.deviceidentsample;
+package de.deviceident.deviceidentsample;
 
 import android.Manifest;
 import android.app.Activity;

@@ -1,4 +1,4 @@
-package com.riskident.deviceidentsample;
+package de.deviceident.deviceidentsample;
 
 import org.junit.Test;
 
