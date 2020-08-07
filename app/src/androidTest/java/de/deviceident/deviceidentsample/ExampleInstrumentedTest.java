@@ -1,4 +1,4 @@
-package com.riskident.deviceidentsample;
+package de.deviceident.deviceidentsample;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.riskident.deviceidentsample", appContext.getPackageName());
+        assertEquals("de.deviceident.deviceidentsample", appContext.getPackageName());
     }
 }

@@ -4,7 +4,7 @@
     android:id="@+id/mainactivity_layout_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.riskident.deviceidentsample.MainActivity">
+    tools:context="de.deviceident.deviceidentsample.MainActivity">
 
     <TextView
         android:id="@+id/mainactivity_textview_header"
