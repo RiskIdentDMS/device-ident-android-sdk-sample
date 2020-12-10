@@ -34,19 +34,7 @@ public class MainActivity extends Activity implements DataCallback, View.OnClick
         findViewById(R.id.mainactivity_button_request_permissions).setOnClickListener(this);
     }
 
-    @Override
-    public void onDataSent(String data) {
-//        try {
-//            File file = new File(getExternalFilesDir(null), "androidDevice.json");
-//            file.delete();
-//            FileOutputStream outputStream = new FileOutputStream(file);
-//            outputStream.write(data.getBytes());
-//            outputStream.close();
-//            file.exists();
-//        } catch (Exception e) {
-//            Log.e(TAG, "Test File could not be written.");
-//        }
-    }
+   
 
     @Override
     public void onDataSent(String data, final String token) {
@@ -95,9 +83,10 @@ public class MainActivity extends Activity implements DataCallback, View.OnClick
             HashMap<String, String> customArgs = new HashMap<>();
             customArgs.put("cId", "123456789");
             customArgs.put("amount", "1000");
+            customArgs.put("transactionid + 1", "123 abc + 1");
             System.out.println(randomToken);
             // Please use a unique token for every call and a location. Please refer to the documentation for further information.
-            ClientSecurityModule.getInstance().execute(this, this, randomToken, null, customArgs);
+            ClientSecurityModule.getInstance().execute(this, this, randomToken, "login", customArgs);
 
             Log.e(TAG, "CURRENT TOKEN: " + randomToken);
 
