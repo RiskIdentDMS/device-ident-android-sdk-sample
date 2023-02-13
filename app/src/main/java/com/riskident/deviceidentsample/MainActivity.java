@@ -4,21 +4,20 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import com.riskident.device.ClientSecurityModule;
-import com.riskident.device.DataCallback;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.HashMap;
 import java.util.UUID;
 
-public class MainActivity extends Activity implements DataCallback, View.OnClickListener{
+public class MainActivity extends Activity implements  View.OnClickListener{
     private final static int REQUEST_LOCATION_PERMISSIONS = 1;
 
     private String TAG = MainActivity.class.getSimpleName();
@@ -36,31 +35,31 @@ public class MainActivity extends Activity implements DataCallback, View.OnClick
 
    
 
-    @Override
-    public void onDataSent(String data, final String token) {
-        System.out.println(token);
-        try {
-            File file = new File(getExternalFilesDir(null), "androidDevice.json");
-            file.delete();
-            FileOutputStream outputStream = new FileOutputStream(file);
-            outputStream.write(data.getBytes());
-            outputStream.close();
-            file.exists();
-            runOnUiThread(new Runnable() {
-
-                @Override
-                public void run() {
-                    //System.out.println(token);
-                    // Stuff that updates the UI
-                    textViewToken.setText(token);
-
-                }
-            });
-
-        } catch (Exception e) {
-            Log.e(TAG, "Test File could not be written.");
-        }
-    }
+//    @Override
+//    public void onDataSent(String data, final String token) {
+//        System.out.println(token);
+//        try {
+//            File file = new File(getExternalFilesDir(null), "androidDevice.json");
+//            file.delete();
+//            FileOutputStream outputStream = new FileOutputStream(file);
+//            outputStream.write(data.getBytes());
+//            outputStream.close();
+//            file.exists();
+//            runOnUiThread(new Runnable() {
+//
+//                @Override
+//                public void run() {
+//                    //System.out.println(token);
+//                    // Stuff that updates the UI
+//                    textViewToken.setText(token);
+//
+//                }
+//            });
+//
+//        } catch (Exception e) {
+//            Log.e(TAG, "Test File could not be written.");
+//        }
+//    }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions,  int[] grantResults) {
@@ -86,7 +85,7 @@ public class MainActivity extends Activity implements DataCallback, View.OnClick
             customArgs.put("transactionid + 1", "123 abc + 1");
             System.out.println(randomToken);
             // Please use a unique token for every call and a location. Please refer to the documentation for further information.
-            ClientSecurityModule.getInstance().execute(this, this, randomToken, "login", customArgs);
+            ClientSecurityModule.getInstance().execute(this, randomToken, "login", customArgs, null);
 
             Log.e(TAG, "CURRENT TOKEN: " + randomToken);
 

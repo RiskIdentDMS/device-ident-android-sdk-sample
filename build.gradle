@@ -6,7 +6,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.0'
+        classpath 'com.android.tools.build:gradle:4.2.2'
 
 
 
@@ -20,7 +20,7 @@ allprojects {
         google()
         jcenter()
         maven {
-            url 'https://riskident.jfrog.io/riskident/android-release'
+            url 'https://riskident.jfrog.io/riskident/android-develop'
             credentials {
                 // Please use USERNAME and PASSWORD provided by RISK IDENT
                 username "<USERNAME>"
