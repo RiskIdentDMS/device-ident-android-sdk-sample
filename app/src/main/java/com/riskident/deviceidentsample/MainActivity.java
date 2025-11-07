@@ -2,6 +2,7 @@ package com.riskident.deviceidentsample;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import androidx.core.app.ActivityCompat;
@@ -31,6 +32,7 @@ public class MainActivity extends Activity implements  View.OnClickListener{
         this.textViewToken = findViewById(R.id.mainactivity_token_value);
         findViewById(R.id.mainactivity_button_send).setOnClickListener(this);
         findViewById(R.id.mainactivity_button_request_permissions).setOnClickListener(this);
+        findViewById(R.id.mainactivity_button_open_second).setOnClickListener(this);
     }
 
    
@@ -85,7 +87,7 @@ public class MainActivity extends Activity implements  View.OnClickListener{
             customArgs.put("transactionid + 1", "123 abc + 1");
             System.out.println(randomToken);
             // Please use a unique token for every call and a location. Please refer to the documentation for further information.
-            ClientSecurityModule.getInstance().execute(this, randomToken, "login", customArgs, null);
+            ClientSecurityModule.getInstance().execute("<SNIPPET_ID>", this, randomToken, "login", customArgs, null);
 
             Log.e(TAG, "CURRENT TOKEN: " + randomToken);
 
@@ -98,6 +100,9 @@ public class MainActivity extends Activity implements  View.OnClickListener{
                         Manifest.permission.READ_PHONE_STATE
                 }, REQUEST_LOCATION_PERMISSIONS);
             }
+        } else if(v.getId() == R.id.mainactivity_button_open_second) {
+            Intent intent = new Intent(this, SecondActivity.class);
+            startActivity(intent);
         }
 
     }

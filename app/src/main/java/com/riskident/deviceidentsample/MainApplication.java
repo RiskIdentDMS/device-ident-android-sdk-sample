@@ -7,6 +7,6 @@ public class MainApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        ClientSecurityModule.initialize("<SNIPPETID>"); // Add your SNIPPETID here
+        ClientSecurityModule.initialize(); // Add your SNIPPETID here
     }
 }

@@ -6,7 +6,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.0.2'
+        classpath 'com.android.tools.build:gradle:8.10.1'
 
 
 
@@ -23,8 +23,8 @@ allprojects {
             url 'https://riskident.jfrog.io/riskident/android-develop'
             credentials {
                 // Please use USERNAME and PASSWORD provided by RISK IDENT
-                username "<USERNAME>"
-                password "<PASSWORD>"
+                username "asif.mayilli"
+                password "vers0GNIR.pruf"
             }
         }
     }
