@@ -55,11 +55,11 @@ public class SecondActivity extends Activity implements View.OnClickListener {
             customArgs.put("transactionid + 2", "456 def + 2");
             System.out.println(randomToken);
             // Please use a unique token for every call and a location. Please refer to the documentation for further information.
-            ClientSecurityModule.getInstance().execute("<SNIPPET_ID>", this, randomToken, "transaction", customArgs, null);
+            ClientSecurityModule.getInstance().execute("msdk-test", this, randomToken, "transaction", customArgs, null);
 
             Log.e(TAG, "CURRENT TOKEN: " + randomToken);
 
-            // textViewToken.setText(randomToken);
+            textViewToken.setText(randomToken);
         } else if(v.getId() == R.id.secondactivity_button_request_permissions) {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(this, new String[]{
@@ -71,4 +71,6 @@ public class SecondActivity extends Activity implements View.OnClickListener {
         }
     }
 }
+
+
 
